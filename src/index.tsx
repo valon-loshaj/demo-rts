@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import GuestList from "./state/GuestList";
+import UserSearch from "./state/UserSearch";
+import EventComponent from "./events/EventComponent";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// 2) Get a reference to the div with ID root
+const el = document.getElementById("root");
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 3) Tell React to take control of that element
+const root = (ReactDOM as any).createRoot(el!);
+
+const App = () => {
+	return (
+		<div>
+			<EventComponent />;
+		</div>
+	);
+};
+
+root.render(<App />);
